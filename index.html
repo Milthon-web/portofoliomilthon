@@ -4,395 +4,1114 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>N Milthon Pranoto | Portfolio</title>
+    <title>Demo Aplikasi Kasir | N Milthon Pranoto</title>
 
-    <link rel="stylesheet" href="style.css">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f7fb;
+            color: #1f2937;
+        }
+
+        /* NAVBAR */
+        .navbar {
+            background: #111827;
+            color: white;
+            padding: 18px 7%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        .logo span {
+            color: #3b82f6;
+        }
+
+        .back {
+            color: white;
+            text-decoration: none;
+            padding: 9px 15px;
+            border: 1px solid #374151;
+            border-radius: 8px;
+        }
+
+        .back:hover {
+            background: #1f2937;
+        }
+
+        /* CONTAINER */
+        .container {
+            width: 90%;
+            max-width: 1150px;
+            margin: 35px auto;
+        }
+
+        /* HERO */
+        .hero {
+            background: white;
+            padding: 28px;
+            border-radius: 14px;
+            margin-bottom: 25px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.06);
+        }
+
+        .hero h1 {
+            margin-bottom: 8px;
+        }
+
+        .hero p {
+            color: #6b7280;
+        }
+
+        .badge {
+            display: inline-block;
+            margin-top: 15px;
+            background: #dbeafe;
+            color: #1d4ed8;
+            padding: 7px 12px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: bold;
+        }
+
+        /* DASHBOARD */
+        .dashboard {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+
+        .stat {
+            background: white;
+            padding: 20px;
+            border-radius: 14px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.06);
+        }
+
+        .stat p {
+            color: #6b7280;
+            font-size: 14px;
+            margin-bottom: 8px;
+        }
+
+        .stat h2 {
+            font-size: 24px;
+        }
+
+        /* CONTENT */
+        .content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .card {
+            background: white;
+            padding: 22px;
+            border-radius: 14px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.06);
+            margin-bottom: 20px;
+        }
+
+        .card h2 {
+            margin-bottom: 18px;
+            font-size: 20px;
+        }
+
+        /* FORM */
+        .form {
+            display: grid;
+            gap: 10px;
+        }
+
+        input,
+        select {
+            width: 100%;
+            padding: 11px;
+            border: 1px solid #d1d5db;
+            border-radius: 8px;
+            outline: none;
+        }
+
+        input:focus,
+        select:focus {
+            border-color: #3b82f6;
+        }
+
+        /* BUTTON */
+        button {
+            border: 0;
+            cursor: pointer;
+            border-radius: 8px;
+            padding: 10px 14px;
+            font-weight: bold;
+        }
+
+        .primary {
+            background: #2563eb;
+            color: white;
+        }
+
+        .primary:hover {
+            background: #1d4ed8;
+        }
+
+        .danger {
+            background: #fee2e2;
+            color: #b91c1c;
+        }
+
+        /* TABLE */
+        .table-wrapper {
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 500px;
+        }
+
+        th,
+        td {
+            padding: 12px;
+            border-bottom: 1px solid #e5e7eb;
+            text-align: left;
+            font-size: 14px;
+        }
+
+        th {
+            background: #f9fafb;
+        }
+
+        /* TOTAL */
+        .cart-total {
+            margin-top: 18px;
+            padding-top: 15px;
+            border-top: 2px solid #e5e7eb;
+        }
+
+        .total-row {
+            display: flex;
+            justify-content: space-between;
+            margin: 8px 0;
+        }
+
+        .grand-total {
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        .payment {
+            margin-top: 15px;
+        }
+
+        .payment button {
+            width: 100%;
+            margin-top: 10px;
+        }
+
+        /* MESSAGE */
+        .message {
+            margin-top: 12px;
+            padding: 10px;
+            border-radius: 8px;
+            background: #dcfce7;
+            color: #166534;
+            display: none;
+        }
+
+        /* FOOTER */
+        footer {
+            text-align: center;
+            padding: 30px;
+            color: #6b7280;
+            font-size: 14px;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 850px) {
+
+            .dashboard {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .content {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 500px) {
+
+            .container {
+                width: 94%;
+                margin-top: 20px;
+            }
+
+            .dashboard {
+                grid-template-columns: 1fr;
+            }
+
+            .card {
+                padding: 17px;
+            }
+        }
+    </style>
 </head>
+
 
 <body>
 
     <!-- NAVBAR -->
-    <header>
-        <nav class="navbar">
+    <nav class="navbar">
 
-            <div class="logo">
-                Milthon<span>.</span>
-            </div>
-
-            <ul class="nav-menu">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">Tentang Saya</a></li>
-                <li><a href="#education">Pendidikan</a></li>
-                <li><a href="#skills">Keahlian</a></li>
-                <li><a href="#projects">Projek</a></li>
-                <li><a href="#contact">Hubungi</a></li>
-            </ul>
-
-            <button class="menu-btn" onclick="toggleMenu()">☰</button>
-
-        </nav>
-    </header>
-
-
-    <!-- HOME -->
-    <section id="home" class="hero">
-
-        <div class="hero-text">
-
-            <p class="hello">HALO, SAYA</p>
-
-            <h1>N Milthon <span>Pranoto</span></h1>
-
-            <h3>
-                Software Engineering Student
-            </h3>
-
-            <p class="school">
-                SMKN 1 Cipeundeuy • Rekayasa Perangkat Lunak
-            </p>
-
-            <p class="description">
-                Siswa kelas XII Rekayasa Perangkat Lunak yang
-                memiliki ketertarikan pada teknologi, pemrograman,
-                dan desain.
-            </p>
-
-            <div class="hero-buttons">
-                <a href="#projects" class="btn">
-                    Lihat Projek
-                </a>
-
-                <a href="#contact" class="btn-outline">
-                    Hubungi Saya
-                </a>
-            </div>
-
+        <div class="logo">
+            Milthon<span></span> Kasir
         </div>
 
+        <a href="kasir/index.html" class="project-button">
+            lihat project ->
+        </a>
 
-        <div class="hero-image">
-
-            <!-- Foto dari folder assets -->
-            <img
-                src="milthon.jpg"
-                alt="Foto N Milthon Pranoto"
-            >
-
-        </div>
-
-    </section>
+    </nav>
 
 
-    <!-- TENTANG SAYA -->
-    <section id="about" class="section">
+    <main class="container">
 
-        <h2>Tentang Saya</h2>
+        <!-- HEADER -->
+        <section class="hero">
 
-        <div class="about-card">
+            <h1>
+                Aplikasi Kasir Berbasis Web
+            </h1>
 
             <p>
-                Siswa kelas XII jurusan Rekayasa Perangkat Lunak
-                (RPL) yang memiliki ketertarikan pada bidang
-                teknologi, pemrograman, dan desain.
+                Demo project portfolio — N Milthon Pranoto
             </p>
 
-            <p>
-                Memiliki kemampuan dasar dalam Microsoft Office,
-                Canva, dan Figma serta pengalaman membuat aplikasi
-                kasir sederhana.
-            </p>
+            <span class="badge">
+                DEMO • HTML + CSS + JavaScript
+            </span>
 
-            <p>
-                Memiliki semangat untuk belajar, mengembangkan
-                kemampuan, dan ingin mendapatkan pengalaman kerja
-                melalui kegiatan PKL.
-            </p>
-
-        </div>
-
-    </section>
+        </section>
 
 
-    <!-- PENDIDIKAN -->
-    <section id="education" class="section">
+        <!-- DASHBOARD -->
+        <section class="dashboard">
 
-        <h2>Pendidikan</h2>
-
-        <div class="timeline">
-
-            <div class="education-card">
-
-                <span>2024 - Sekarang</span>
-
-                <h3>
-                    SMKN 1 Cipeundeuy
-                </h3>
+            <div class="stat">
 
                 <p>
-                    Rekayasa Perangkat Lunak
+                    Total Produk
                 </p>
 
-            </div>
-
-
-            <div class="education-card">
-
-                <span>2021 - 2024</span>
-
-                <h3>
-                    SMPN 1 Cikalongwetan
-                </h3>
+                <h2 id="totalProduk">
+                    3
+                </h2>
 
             </div>
 
 
-            <div class="education-card">
-
-                <span>2016 - 2021</span>
-
-                <h3>
-                    SDN 1 Cikalong Wetan
-                </h3>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- KEAHLIAN -->
-    <section id="skills" class="section">
-
-        <h2>Keahlian</h2>
-
-        <div class="skills-container">
-
-            <div class="skill-card">
-                <div class="skill-icon"></div>
-                <h3>Microsoft Word</h3>
-            
-            </div>
-
-            <div class="skill-card">
-                <div class="skill-icon"></div>
-                <h3>Microsoft Excel</h3>
-             
-            </div>
-
-            <div class="skill-card">
-                <div class="skill-icon"></div>
-                <h3>Canva</h3>
-              
-            </div>
-
-            <div class="skill-card">
-                <div class="skill-icon"></div>
-                <h3>Figma</h3>
-              
-            </div>
-
-            <div class="skill-card">
-                <div class="skill-icon"></div>
-                <h3>Desain UI</h3>
-            </div>
-
-            <div class="skill-card">
-                <div class="skill-icon"></div>
-                <h3>Pemrograman Web</h3>
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- PROJEK -->
-    <section id="projects" class="section">
-
-        <h2>Projek</h2>
-
-        <div class="project-container">
-
-
-            <!-- PROJECT 1 -->
-            <div class="project-card">
-
-                <div class="project-number">
-                    01
-                </div>
-
-                <h3>
-                    Aplikasi Kasir Berbasis Web
-                </h3>
+            <div class="stat">
 
                 <p>
-                    Membuat aplikasi kasir sederhana dengan
-                    fitur pengelolaan barang dan transaksi.
+                    Total Transaksi
                 </p>
 
-                <ul>
-                    <li>
-                        Membuat fitur pengelolaan barang dan transaksi.
-                    </li>
-
-                    <li>
-                        Membuat tampilan antarmuka sederhana.
-                    </li>
-
-                    <li>
-                        Menggunakan PHP, MySQL, HTML, CSS,
-                        dan JavaScript.
-                    </li>
-                </ul>
-
-                <div class="technology">
-                    PHP • MySQL • HTML • CSS • JavaScript
-                </div>
+                <h2 id="totalTransaksi">
+                    0
+                </h2>
 
             </div>
 
 
-            <!-- PROJECT 2 -->
-            <div class="project-card">
-
-                <div class="project-number">
-                    02
-                </div>
-
-                <h3>
-                    Projek Database
-                </h3>
+            <div class="stat">
 
                 <p>
-                    Membuat dan mengelola database untuk
-                    menyimpan serta mengatur data secara
-                    terstruktur.
+                    Total Item Terjual
                 </p>
 
-                <ul>
-                    <li>
-                        Membuat tabel database.
-                    </li>
-
-                    <li>
-                        Mengatur data secara terstruktur.
-                    </li>
-
-                    <li>
-                        Membuat relasi antar tabel.
-                    </li>
-                </ul>
-
-                <div class="technology">
-                    MySQL • Database
-                </div>
+                <h2 id="totalItem">
+                    0
+                </h2>
 
             </div>
 
 
-            <!-- PROJECT 3 -->
-            <div class="project-card">
-
-                <div class="project-number">
-                    03
-                </div>
-
-                <h3>
-                    Profil Siswa
-                </h3>
+            <div class="stat">
 
                 <p>
-                    Website profil siswa yang menampilkan
-                    informasi diri, pendidikan, keahlian,
-                    dan projek.
+                    Total Penjualan
                 </p>
 
-                <div class="technology">
-                    HTML • CSS • JavaScript
+                <h2 id="totalPenjualan">
+                    Rp 0
+                </h2>
+
+            </div>
+
+        </section>
+
+
+        <section class="content">
+
+            <!-- DATA BARANG -->
+            <div>
+
+                <div class="card">
+
+                    <h2>
+                        Tambah Barang
+                    </h2>
+
+                    <form
+                        class="form"
+                        id="barangForm"
+                    >
+
+                        <input
+                            type="text"
+                            id="namaBarang"
+                            placeholder="Nama barang"
+                            required
+                        >
+
+                        <input
+                            type="number"
+                            id="hargaBarang"
+                            placeholder="Harga"
+                            min="0"
+                            required
+                        >
+
+                        <input
+                            type="number"
+                            id="stokBarang"
+                            placeholder="Stok"
+                            min="0"
+                            required
+                        >
+
+                        <button
+                            type="submit"
+                            class="primary"
+                        >
+                            + Tambah Barang
+                        </button>
+
+                    </form>
+
+                </div>
+
+
+                <!-- TABEL BARANG -->
+                <div class="card">
+
+                    <h2>
+                        Data Barang
+                    </h2>
+
+                    <div class="table-wrapper">
+
+                        <table>
+
+                            <thead>
+
+                                <tr>
+                                    <th>Nama</th>
+                                    <th>Harga</th>
+                                    <th>Stok</th>
+                                    <th>Aksi</th>
+                                </tr>
+
+                            </thead>
+
+                            <tbody id="produkTable"></tbody>
+
+                        </table>
+
+                    </div>
+
                 </div>
 
             </div>
 
-        </div>
 
-    </section>
-
-
-    <!-- KEMAMPUAN LAIN -->
-    <section class="section">
-
-        <h2>Kemampuan Lain</h2>
-
-        <div class="other-skills">
-
+            <!-- TRANSAKSI -->
             <div>
-                ✓ Mampu bekerja dalam tim
+
+                <div class="card">
+
+                    <h2>
+                        Transaksi
+                    </h2>
+
+                    <div class="form">
+
+                        <select id="produkSelect"></select>
+
+                        <input
+                            type="number"
+                            id="jumlah"
+                            value="1"
+                            min="1"
+                        >
+
+                        <button
+                            type="button"
+                            class="primary"
+                            onclick="tambahKeranjang()"
+                        >
+                            + Tambah ke Keranjang
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- KERANJANG -->
+                <div class="card">
+
+                    <h2>
+                        Keranjang
+                    </h2>
+
+                    <div class="table-wrapper">
+
+                        <table>
+
+                            <thead>
+
+                                <tr>
+                                    <th>Barang</th>
+                                    <th>Qty</th>
+                                    <th>Harga</th>
+                                    <th>Total</th>
+                                </tr>
+
+                            </thead>
+
+                            <tbody id="cartTable"></tbody>
+
+                        </table>
+
+                    </div>
+
+
+                    <div class="cart-total">
+
+                        <div class="total-row">
+
+                            <span>
+                                Total
+                            </span>
+
+                            <span
+                                class="grand-total"
+                                id="totalBelanja"
+                            >
+                                Rp 0
+                            </span>
+
+                        </div>
+
+
+                        <div class="payment">
+
+                            <input
+                                type="number"
+                                id="uangBayar"
+                                placeholder="Uang pembayaran"
+                                min="0"
+                            >
+
+
+                            <button
+                                class="primary"
+                                onclick="prosesPembayaran()"
+                            >
+                                Bayar
+                            </button>
+
+
+                            <button
+                                class="danger"
+                                onclick="resetKeranjang()"
+                            >
+                                Kosongkan Keranjang
+                            </button>
+
+
+                            <div
+                                class="message"
+                                id="message"
+                            ></div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
             </div>
 
-            <div>
-                ✓ Mau belajar hal baru
-            </div>
+        </section>
 
-            <div>
-                ✓ Bertanggung jawab dalam tugas
-            </div>
-
-            <div>
-                ✓ Memiliki dasar bahasa Inggris yang pasif
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- KONTAK -->
-    <section id="contact" class="section contact">
-
-        <h2>Hubungi Saya</h2>
-
-        <div class="contact-card">
-
-            <p>
-                <strong>Telepon</strong>
-                <br>
-                0831 1225 5335
-            </p>
-
-            <p>
-                <strong>Email</strong>
-                <br>
-                milthonpranoto@gmail.com
-            </p>
-
-            <p>
-                <strong>Lokasi</strong>
-                <br>
-                Cikalong, Bandung Barat
-            </p>
-
-        </div>
-
-    </section>
+    </main>
 
 
     <!-- FOOTER -->
     <footer>
 
-        <p>
-            © 2026 N Milthon Pranoto
-        </p>
-
-        <p>
-            Software Engineering Student
-        </p>
+        © 2026 N Milthon Pranoto • Demo Aplikasi Kasir
 
     </footer>
 
 
     <!-- JAVASCRIPT -->
-    <script src="script.js"></script>
+    <script>
+
+        let produk = [
+
+            {
+                id: 1,
+                nama: "Pangsit",
+                harga: 10000,
+                stok: 20
+            },
+
+            {
+                id: 2,
+                nama: "Mie Instan",
+                harga: 5000,
+                stok: 15
+            },
+
+            {
+                id: 3,
+                nama: "Es Teh",
+                harga: 4000,
+                stok: 25
+            }
+
+        ];
+
+
+        let keranjang = [];
+
+        let totalTransaksi = 0;
+
+        let totalItemTerjual = 0;
+
+        let totalPenjualan = 0;
+
+
+        // FORMAT RUPIAH
+        function rupiah(angka) {
+
+            return "Rp " +
+                angka.toLocaleString("id-ID");
+
+        }
+
+
+        // MENAMPILKAN PRODUK
+        function tampilkanProduk() {
+
+            const table =
+                document.getElementById(
+                    "produkTable"
+                );
+
+            const select =
+                document.getElementById(
+                    "produkSelect"
+                );
+
+
+            table.innerHTML = "";
+
+            select.innerHTML = "";
+
+
+            produk.forEach(item => {
+
+                table.innerHTML += `
+
+                    <tr>
+
+                        <td>
+                            ${item.nama}
+                        </td>
+
+                        <td>
+                            ${rupiah(item.harga)}
+                        </td>
+
+                        <td>
+                            ${item.stok}
+                        </td>
+
+                        <td>
+
+                            <button
+                                class="danger"
+                                onclick="hapusProduk(${item.id})"
+                            >
+                                Hapus
+                            </button>
+
+                        </td>
+
+                    </tr>
+
+                `;
+
+
+                if (item.stok > 0) {
+
+                    select.innerHTML += `
+
+                        <option value="${item.id}">
+
+                            ${item.nama}
+                            -
+                            ${rupiah(item.harga)}
+
+                        </option>
+
+                    `;
+
+                }
+
+            });
+
+
+            document.getElementById(
+                "totalProduk"
+            ).textContent = produk.length;
+
+        }
+
+
+        // TAMBAH PRODUK
+        function tambahProduk(event) {
+
+            event.preventDefault();
+
+
+            const nama =
+                document.getElementById(
+                    "namaBarang"
+                ).value.trim();
+
+
+            const harga =
+                Number(
+                    document.getElementById(
+                        "hargaBarang"
+                    ).value
+                );
+
+
+            const stok =
+                Number(
+                    document.getElementById(
+                        "stokBarang"
+                    ).value
+                );
+
+
+            if (
+                !nama ||
+                harga < 0 ||
+                stok < 0
+            ) {
+                return;
+            }
+
+
+            produk.push({
+
+                id: Date.now(),
+
+                nama: nama,
+
+                harga: harga,
+
+                stok: stok
+
+            });
+
+
+            document.getElementById(
+                "barangForm"
+            ).reset();
+
+
+            tampilkanProduk();
+
+        }
+
+
+        // HAPUS PRODUK
+        function hapusProduk(id) {
+
+            produk =
+                produk.filter(
+                    item => item.id !== id
+                );
+
+
+            keranjang =
+                keranjang.filter(
+                    item => item.id !== id
+                );
+
+
+            tampilkanProduk();
+
+            tampilkanKeranjang();
+
+        }
+
+
+        // TAMBAH KE KERANJANG
+        function tambahKeranjang() {
+
+            const id =
+                Number(
+                    document.getElementById(
+                        "produkSelect"
+                    ).value
+                );
+
+
+            const jumlah =
+                Number(
+                    document.getElementById(
+                        "jumlah"
+                    ).value
+                );
+
+
+            const item =
+                produk.find(
+                    item => item.id === id
+                );
+
+
+            if (
+                !item ||
+                jumlah < 1
+            ) {
+                return;
+            }
+
+
+            const existing =
+                keranjang.find(
+                    item => item.id === id
+                );
+
+
+            const jumlahSaatIni =
+                existing
+                    ? existing.qty
+                    : 0;
+
+
+            if (
+                jumlahSaatIni + jumlah >
+                item.stok
+            ) {
+
+                alert(
+                    "Jumlah melebihi stok yang tersedia."
+                );
+
+                return;
+
+            }
+
+
+            if (existing) {
+
+                existing.qty += jumlah;
+
+            } else {
+
+                keranjang.push({
+
+                    id: item.id,
+
+                    nama: item.nama,
+
+                    harga: item.harga,
+
+                    qty: jumlah
+
+                });
+
+            }
+
+
+            tampilkanKeranjang();
+
+        }
+
+
+        // MENAMPILKAN KERANJANG
+        function tampilkanKeranjang() {
+
+            const table =
+                document.getElementById(
+                    "cartTable"
+                );
+
+
+            table.innerHTML = "";
+
+
+            let total = 0;
+
+
+            keranjang.forEach(item => {
+
+                const subtotal =
+                    item.harga * item.qty;
+
+
+                total += subtotal;
+
+
+                table.innerHTML += `
+
+                    <tr>
+
+                        <td>
+                            ${item.nama}
+                        </td>
+
+                        <td>
+                            ${item.qty}
+                        </td>
+
+                        <td>
+                            ${rupiah(item.harga)}
+                        </td>
+
+                        <td>
+                            ${rupiah(subtotal)}
+                        </td>
+
+                    </tr>
+
+                `;
+
+            });
+
+
+            document.getElementById(
+                "totalBelanja"
+            ).textContent =
+                rupiah(total);
+
+        }
+
+
+        // PROSES PEMBAYARAN
+        function prosesPembayaran() {
+
+            const total =
+                keranjang.reduce(
+
+                    (sum, item) =>
+                        sum +
+                        (
+                            item.harga *
+                            item.qty
+                        ),
+
+                    0
+
+                );
+
+
+            const bayar =
+                Number(
+                    document.getElementById(
+                        "uangBayar"
+                    ).value
+                );
+
+
+            const message =
+                document.getElementById(
+                    "message"
+                );
+
+
+            if (
+                keranjang.length === 0
+            ) {
+
+                alert(
+                    "Keranjang masih kosong."
+                );
+
+                return;
+
+            }
+
+
+            if (bayar < total) {
+
+                alert(
+                    "Uang pembayaran kurang."
+                );
+
+                return;
+
+            }
+
+
+            const kembalian =
+                bayar - total;
+
+
+            keranjang.forEach(
+                cartItem => {
+
+                    const item =
+                        produk.find(
+                            product =>
+                                product.id ===
+                                cartItem.id
+                        );
+
+
+                    if (item) {
+
+                        item.stok -=
+                            cartItem.qty;
+
+                    }
+
+                }
+            );
+
+
+            totalTransaksi++;
+
+
+            totalItemTerjual +=
+                keranjang.reduce(
+
+                    (sum, item) =>
+                        sum + item.qty,
+
+                    0
+
+                );
+
+
+            totalPenjualan += total;
+
+
+            document.getElementById(
+                "totalTransaksi"
+            ).textContent =
+                totalTransaksi;
+
+
+            document.getElementById(
+                "totalItem"
+            ).textContent =
+                totalItemTerjual;
+
+
+            document.getElementById(
+                "totalPenjualan"
+            ).textContent =
+                rupiah(totalPenjualan);
+
+
+            message.style.display =
+                "block";
+
+
+            message.innerHTML =
+                "Pembayaran berhasil! " +
+                "Kembalian: <strong>" +
+                rupiah(kembalian) +
+                "</strong>";
+
+
+            keranjang = [];
+
+
+            document.getElementById(
+                "uangBayar"
+            ).value = "";
+
+
+            tampilkanProduk();
+
+            tampilkanKeranjang();
+
+        }
+
+
+        // KOSONGKAN KERANJANG
+        function resetKeranjang() {
+
+            keranjang = [];
+
+
+            document.getElementById(
+                "uangBayar"
+            ).value = "";
+
+
+            document.getElementById(
+                "message"
+            ).style.display = "none";
+
+
+            tampilkanKeranjang();
+
+        }
+
+
+        // FORM TAMBAH BARANG
+        document
+            .getElementById("barangForm")
+            .addEventListener(
+                "submit",
+                tambahProduk
+            );
+
+
+        // JALANKAN SAAT HALAMAN DIBUKA
+        tampilkanProduk();
+
+        tampilkanKeranjang();
+
+    </script>
 
 </body>
 </html>
