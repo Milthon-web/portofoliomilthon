@@ -3,21 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio N Milthon Pranoto, siswa Rekayasa Perangkat Lunak SMKN 1 Cipeundeuy.">
 
     <title>N Milthon Pranoto | Portfolio</title>
 
     <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-    <!-- ================= NAVBAR ================= -->
+    <!-- NAVBAR -->
     <nav class="navbar">
         <div class="nav-container">
-
-            <div class="logo">
+            <a href="#home" class="logo">
                 Milthon<span>.</span>
-            </div>
+            </a>
+
+            <button class="menu-btn" onclick="toggleMenu()" aria-label="Buka menu">
+                ☰
+            </button>
 
             <ul class="nav-menu">
                 <li><a href="#home">Home</a></li>
@@ -27,19 +30,13 @@
                 <li><a href="#projek">Projek</a></li>
                 <li><a href="#hubungi">Hubungi</a></li>
             </ul>
-
         </div>
     </nav>
 
-
-    <!-- ================= HOME ================= -->
+    <!-- HOME -->
     <section id="home" class="hero">
-
         <div class="hero-content">
-
-            <p class="hero-subtitle">
-                SOFTWARE ENGINEERING STUDENT
-            </p>
+            <p class="hero-subtitle">SOFTWARE ENGINEERING STUDENT</p>
 
             <h1>
                 N MILTHON<br>
@@ -56,38 +53,24 @@
             </p>
 
             <div class="hero-buttons">
-                <a href="#projek" class="btn primary">
-                    Lihat Projek
-                </a>
-
-                <a href="#hubungi" class="btn secondary">
-                    Hubungi Saya
-                </a>
+                <a href="#projek" class="btn primary">Lihat Projek</a>
+                <a href="#hubungi" class="btn secondary">Hubungi Saya</a>
             </div>
-
         </div>
-
 
         <div class="hero-image">
-
-            <!-- GANTI milthon.jpg dengan nama foto lu jika berbeda -->
             <img src="milthon.jpg" alt="Foto N Milthon Pranoto">
-
         </div>
-
     </section>
 
-
-    <!-- ================= TENTANG SAYA ================= -->
+    <!-- TENTANG SAYA -->
     <section id="tentang" class="section">
-
         <div class="section-title">
             <p>PROFILE</p>
             <h2>Tentang Saya</h2>
         </div>
 
         <div class="about-card">
-
             <p>
                 Siswa kelas XII jurusan Rekayasa Perangkat Lunak (RPL)
                 yang memiliki ketertarikan pada bidang teknologi,
@@ -97,83 +80,45 @@
                 untuk belajar, mengembangkan kemampuan, dan ingin
                 mendapatkan pengalaman kerja melalui kegiatan PKL.
             </p>
-
         </div>
-
     </section>
 
-
-    <!-- ================= PENDIDIKAN ================= -->
+    <!-- PENDIDIKAN -->
     <section id="pendidikan" class="section">
-
         <div class="section-title">
             <p>EDUCATION</p>
             <h2>Pendidikan</h2>
         </div>
 
-
         <div class="education-container">
-
             <div class="education-card">
-
-                <span class="education-year">
-                    2024 — Sekarang
-                </span>
-
+                <span class="education-year">2024 — Sekarang</span>
                 <h3>SMKN 1 CIPEUNDEUY</h3>
-
-                <p>
-                    Rekayasa Perangkat Lunak
-                </p>
-
+                <p>Rekayasa Perangkat Lunak</p>
             </div>
 
-
             <div class="education-card">
-
-                <span class="education-year">
-                    2021 — 2024
-                </span>
-
+                <span class="education-year">2021 — 2024</span>
                 <h3>SMPN 1 CIKALONGWETAN</h3>
-
-                <p>
-                    Sekolah Menengah Pertama
-                </p>
-
+                <p>Sekolah Menengah Pertama</p>
             </div>
-
 
             <div class="education-card">
-
-                <span class="education-year">
-                    2016 — 2021
-                </span>
-
+                <span class="education-year">2016 — 2021</span>
                 <h3>SDN 1 CIKALONG WETAN</h3>
-
-                <p>
-                    Cikalong, Bandung Barat
-                </p>
-
+                <p>Cikalong, Bandung Barat</p>
             </div>
-
         </div>
-
     </section>
 
-
-    <!-- ================= KEAHLIAN ================= -->
+    <!-- KEAHLIAN -->
     <section id="keahlian" class="section">
-
         <div class="section-title">
             <p>SKILLS</p>
             <h2>Keahlian</h2>
         </div>
 
-
         <div class="skills-grid">
-
             <div class="skill-card">
                 <h3>Microsoft Word</h3>
                 <p>Dasar</p>
@@ -203,40 +148,24 @@
                 <h3>Pemrograman Web</h3>
                 <p>Dasar</p>
             </div>
-
         </div>
-
     </section>
 
-
-    <!-- ================= PROJEK ================= -->
+    <!-- PROJEK -->
     <section id="projek" class="section">
-
         <div class="section-title">
             <p>MY WORK</p>
             <h2>Projek</h2>
         </div>
 
-
         <div class="projects-grid">
-
-
-            <!-- PROJECT 1 -->
             <div class="project-card">
-
-                <div class="project-number">
-                    01
-                </div>
+                <div class="project-number">01</div>
 
                 <div class="project-content">
+                    <span class="project-category">WEB DEVELOPMENT</span>
 
-                    <span class="project-category">
-                        WEB DEVELOPMENT
-                    </span>
-
-                    <h3>
-                        Aplikasi Kasir Berbasis Web
-                    </h3>
+                    <h3>Aplikasi Kasir Berbasis Web</h3>
 
                     <p>
                         Membuat aplikasi kasir sederhana dengan fitur
@@ -249,126 +178,67 @@
                         PHP, MySQL, HTML, CSS, JavaScript
                     </p>
 
-                    <!-- MENUJU DEMO KASIR -->
-                    <a
-                        href="portofolio/kasir/kasir.html"
-                        class="project-button"
-                    >
+                    <a href="kasir/" class="project-button">
                         Lihat Project →
                     </a>
-
                 </div>
-
             </div>
+        </div>
+    </section>
 
-
-
-    <!-- ================= KEMAMPUAN LAIN ================= -->
+    <!-- KEMAMPUAN LAIN -->
     <section class="section">
-
         <div class="section-title">
             <p>OTHER SKILLS</p>
             <h2>Kemampuan Lain</h2>
         </div>
 
-
         <div class="other-skills">
-
-            <div class="other-skill">
-                ✓ Mampu bekerja dalam tim
-            </div>
-
-            <div class="other-skill">
-                ✓ Mau belajar hal baru
-            </div>
-
-            <div class="other-skill">
-                ✓ Bertanggung jawab dalam tugas
-            </div>
-
-            <div class="other-skill">
-                ✓ Memiliki dasar bahasa Inggris yang pasif
-            </div>
-
+            <div class="other-skill">✓ Mampu bekerja dalam tim</div>
+            <div class="other-skill">✓ Mau belajar hal baru</div>
+            <div class="other-skill">✓ Bertanggung jawab dalam tugas</div>
+            <div class="other-skill">✓ Memiliki dasar bahasa Inggris yang pasif</div>
         </div>
-
     </section>
 
-
-    <!-- ================= HUBUNGI ================= -->
+    <!-- HUBUNGI -->
     <section id="hubungi" class="section contact-section">
-
         <div class="section-title">
             <p>CONTACT</p>
             <h2>Hubungi Saya</h2>
         </div>
 
-
         <div class="contact-container">
-
-
             <div class="contact-card">
-
                 <span>TELEPON</span>
-
-                <h3>
-                    0831 1225 5335
-                </h3>
-
+                <h3>0831 1225 5335</h3>
             </div>
 
-
             <div class="contact-card">
-
                 <span>EMAIL</span>
-
-                <h3>
-                    milthonpranoto@gmail.com
-                </h3>
-
+                <h3>milthonpranoto@gmail.com</h3>
             </div>
-
 
             <div class="contact-card">
-
                 <span>LOKASI</span>
-
-                <h3>
-                    Cikalong, Bandung Barat
-                </h3>
-
+                <h3>Cikalong, Bandung Barat</h3>
             </div>
-
-
         </div>
-
     </section>
 
-
-    <!-- ================= FOOTER ================= -->
+    <!-- FOOTER -->
     <footer>
-
         <div class="footer-content">
+            <h3>Milthon<span>.</span></h3>
 
-            <h3>
-                Milthon<span></span>
-            </h3>
-
-            <p>
-                Profil Siswa • Siap belajar dan berkembang melalui PKL
-            </p>
+            <p>Profil Siswa • Siap belajar dan berkembang melalui PKL</p>
 
             <p class="copyright">
                 © 2026 N Milthon Pranoto. All Rights Reserved.
             </p>
-
         </div>
-
     </footer>
 
-
-    <!-- JAVASCRIPT -->
     <script src="script.js"></script>
-
 </body>
 </html>
