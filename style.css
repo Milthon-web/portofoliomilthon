@@ -28,9 +28,7 @@ body {
     line-height: 1.6;
 }
 
-/* =========================
-   NAVBAR
-========================= */
+/* NAVBAR */
 
 .navbar {
     position: fixed;
@@ -67,14 +65,14 @@ body {
 
 .nav-menu {
     display: flex;
-    gap: 28px;
+    gap: 22px;
     list-style: none;
 }
 
 .nav-menu a {
     color: var(--text-secondary);
     text-decoration: none;
-    font-size: 15px;
+    font-size: 14px;
     transition: 0.3s;
 }
 
@@ -91,9 +89,7 @@ body {
     cursor: pointer;
 }
 
-/* =========================
-   HERO
-========================= */
+/* HERO */
 
 .hero {
     min-height: 100vh;
@@ -175,9 +171,7 @@ body {
     transform: translateY(-3px);
 }
 
-/* =========================
-   FOTO PROFIL
-========================= */
+/* FOTO */
 
 .hero-image {
     position: relative;
@@ -211,21 +205,18 @@ body {
     from {
         transform: rotate(0deg);
     }
-
     to {
         transform: rotate(360deg);
     }
 }
 
-/* =========================
-   SECTION
-========================= */
+/* SECTION */
 
 .section {
     max-width: 1150px;
     margin: auto;
     padding: 100px 25px;
-    scroll-margin-top: 75px;
+    scroll-margin-top: 80px;
 }
 
 .section-title {
@@ -242,7 +233,6 @@ body {
 
 .section-title h2 {
     font-size: 38px;
-    position: relative;
 }
 
 .section-title h2::after {
@@ -255,9 +245,7 @@ body {
     border-radius: 5px;
 }
 
-/* =========================
-   TENTANG SAYA
-========================= */
+/* ABOUT */
 
 .about-card {
     background: var(--card);
@@ -271,9 +259,7 @@ body {
     color: var(--text-secondary);
 }
 
-/* =========================
-   PENDIDIKAN
-========================= */
+/* EDUCATION */
 
 .education-container {
     display: grid;
@@ -308,9 +294,7 @@ body {
     color: var(--text-secondary);
 }
 
-/* =========================
-   KEAHLIAN
-========================= */
+/* SKILLS */
 
 .skills-grid {
     display: grid;
@@ -340,9 +324,7 @@ body {
     color: var(--text-secondary);
 }
 
-/* =========================
-   PROJECT
-========================= */
+/* PROJECT */
 
 .projects-grid {
     display: grid;
@@ -411,7 +393,7 @@ body {
 
 .project-button {
     display: inline-block;
-    margin-top: 10px;
+    margin-top: 15px;
     padding: 10px 18px;
     background: var(--primary);
     color: white;
@@ -426,9 +408,68 @@ body {
     transform: translateY(-3px);
 }
 
-/* =========================
-   KEMAMPUAN LAIN
-========================= */
+/* UI/UX FIGMA */
+
+.uiux-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 15px;
+    padding: 30px;
+    overflow: hidden;
+}
+
+.uiux-info {
+    margin-bottom: 25px;
+}
+
+.uiux-info h3 {
+    font-size: 24px;
+    margin: 10px 0;
+}
+
+.uiux-info p {
+    color: var(--text-secondary);
+    max-width: 700px;
+}
+
+.design-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 18px;
+}
+
+.design-tags span {
+    background: rgba(59, 130, 246, 0.12);
+    color: var(--primary);
+    border: 1px solid rgba(59, 130, 246, 0.2);
+    padding: 6px 13px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.figma-preview {
+    width: 100%;
+    height: 600px;
+    overflow: hidden;
+    border-radius: 12px;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border);
+}
+
+.figma-preview iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    display: block;
+}
+
+.uiux-card .project-button {
+    margin-top: 20px;
+}
+
+/* OTHER SKILLS */
 
 .other-skills {
     display: grid;
@@ -450,9 +491,7 @@ body {
     transform: translateX(5px);
 }
 
-/* =========================
-   KONTAK
-========================= */
+/* CONTACT */
 
 .contact-section {
     text-align: center;
@@ -495,9 +534,7 @@ body {
     overflow-wrap: anywhere;
 }
 
-/* =========================
-   FOOTER
-========================= */
+/* FOOTER */
 
 footer {
     background: #060b16;
@@ -518,9 +555,7 @@ footer {
     margin-top: 15px;
 }
 
-/* =========================
-   RESPONSIVE TABLET
-========================= */
+/* TABLET */
 
 @media (max-width: 900px) {
     .hero {
@@ -534,13 +569,16 @@ footer {
     .skills-grid {
         grid-template-columns: repeat(2, 1fr);
     }
+
+    .nav-menu {
+        gap: 12px;
+    }
 }
 
-/* =========================
-   RESPONSIVE HP
-========================= */
+/* MOBILE */
 
 @media (max-width: 700px) {
+
     .nav-container {
         padding: 17px 20px;
     }
@@ -616,13 +654,20 @@ footer {
     .contact-container {
         grid-template-columns: 1fr;
     }
+
+    .uiux-card {
+        padding: 18px;
+    }
+
+    .figma-preview {
+        height: 450px;
+    }
 }
 
-/* =========================
-   SMALL HP
-========================= */
+/* SMALL HP */
 
 @media (max-width: 400px) {
+
     .hero h1 {
         font-size: 38px;
     }
@@ -647,5 +692,9 @@ footer {
 
     .skills-grid {
         grid-template-columns: 1fr;
+    }
+
+    .figma-preview {
+        height: 350px;
     }
 }
