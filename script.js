@@ -1,49 +1,39 @@
 // Menu mobile
-
 function toggleMenu() {
     const menu = document.querySelector(".nav-menu");
-
-    menu.classList.toggle("active");
+    const button = document.querySelector(".menu-btn");
+    const isOpen = menu.classList.toggle("active");
+    button.setAttribute("aria-expanded", String(isOpen));
 }
 
-
 // Tutup menu setelah link diklik
-
 const navLinks = document.querySelectorAll(".nav-menu a");
-
 navLinks.forEach(function(link) {
     link.addEventListener("click", function() {
         document.querySelector(".nav-menu").classList.remove("active");
+        document.querySelector(".menu-btn").setAttribute("aria-expanded", "false");
     });
 });
 
-
-// Animasi saat scroll
-
+// Animasi kartu project saat masuk ke layar
 const cards = document.querySelectorAll(".project-card");
 
-const observer = new IntersectionObserver(function(entries) {
+if ("IntersectionObserver" in window) {
+    const observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("show");
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.15 });
 
-    entries.forEach(function(entry) {
-
-        if (entry.isIntersecting) {
-            entry.target.style.opacity = "1";
-            entry.target.style.transform = "translateY(0)";
-        }
-
+    cards.forEach(function(card) {
+        card.classList.add("reveal");
+        observer.observe(card);
     });
-
-}, {
-    threshold: 0.2
-});
-
-
-cards.forEach(function(card) {
-
-    card.style.opacity = "0";
-    card.style.transform = "translateY(30px)";
-    card.style.transition = "0.6s";
-
-    observer.observe(card);
-
-});
+} else {
+    cards.forEach(function(card) {
+        card.classList.add("show");
+    });
+}
