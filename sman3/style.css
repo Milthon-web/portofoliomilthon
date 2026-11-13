@@ -671,37 +671,66 @@ footer {
 }
 
 @media(max-width:800px) {
-  .topbar { padding: 0 5%; }
-  .topnav { display: none; }
+  .topbar {
+    padding: 0 5%;
+  }
+
+  .topnav {
+    display: none;
+  }
+
   .hero {
     grid-template-columns: 1fr;
     padding: 70px 7%;
     gap: 45px;
   }
+
   .hero-art {
     justify-self: start;
     max-width: 100%;
     height: 260px;
   }
+
   .meta-grid {
     grid-template-columns: repeat(2, 1fr);
     padding: 25px 7%;
   }
+
   .section,
   .dark-section,
   .pale-section {
     padding: 70px 7%;
   }
+
   .two-col {
     grid-template-columns: 1fr;
     gap: 25px;
   }
-  .section-heading { display: block; }
-  .section-heading > p { margin-top: 18px; }
-  .research-stats { grid-template-columns: repeat(2, 1fr); }
-  .prototype-card { grid-template-columns: 1fr; }
-  .prototype-visual { min-height: 260px; }
-  .finding-grid { grid-template-columns: 1fr; }
+
+  .section-heading {
+    display: block;
+  }
+
+  .section-heading > p {
+    margin-top: 18px;
+  }
+
+  .research-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .prototype-card {
+    grid-template-columns: 1fr;
+  }
+
+  .prototype-visual {
+    min-height: 260px;
+  }
+
+  .finding-grid {
+    grid-template-columns: 1fr;
+  }
+
   .chart-row {
     grid-template-columns: 115px 1fr 30px;
     gap: 9px;
@@ -709,24 +738,68 @@ footer {
 }
 
 @media(max-width:480px) {
-  .brand { font-size: 12px; }
-  .back-link { font-size: 10px; }
-  .hero h1 { font-size: 39px; }
-  .lead { font-size: 14px; }
-  .meta-grid { gap: 18px; }
-  .meta-grid strong { font-size: 11px; }
-  .section h2 { font-size: 32px; }
-  .chart-card { padding: 18px 13px; }
+  .brand {
+    font-size: 12px;
+  }
+
+  .back-link {
+    font-size: 10px;
+  }
+
+  .hero h1 {
+    font-size: 39px;
+  }
+
+  .lead {
+    font-size: 14px;
+  }
+
+  .meta-grid {
+    gap: 18px;
+  }
+
+  .meta-grid strong {
+    font-size: 11px;
+  }
+
+  .section h2 {
+    font-size: 32px;
+  }
+
+  .chart-card {
+    padding: 18px 13px;
+  }
+
   .chart-row {
     grid-template-columns: 95px 1fr 25px;
     gap: 7px;
   }
-  .chart-row label { font-size: 9px; }
-  .chart-row b { font-size: 10px; }
-  .benchmark { font-size: 8px; padding: 6px 8px; }
-  .prototype-copy { padding: 30px 25px; }
-  .prototype-visual { padding: 25px 18px 0; }
-  .mock-nav span { font-size: 6px; }
+
+  .chart-row label {
+    font-size: 9px;
+  }
+
+  .chart-row b {
+    font-size: 10px;
+  }
+
+  .benchmark {
+    font-size: 8px;
+    padding: 6px 8px;
+  }
+
+  .prototype-copy {
+    padding: 30px 25px;
+  }
+
+  .prototype-visual {
+    padding: 25px 18px 0;
+  }
+
+  .mock-nav span {
+    font-size: 6px;
+  }
+
   footer {
     padding: 22px 7%;
     font-size: 8px;
