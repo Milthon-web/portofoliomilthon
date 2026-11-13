@@ -591,18 +591,18 @@ a {
   margin: 13px 0 2px;
 }
 
-/* REDESIGN IMPROVEMENTS */
+/* IMPROVED REDESIGN EXPLANATION */
 
 .improvements {
   margin-top: 50px;
-  padding: 30px;
+  padding: 35px;
   background: var(--pale);
   border-radius: 16px;
 }
 
 .improvements-heading {
-  max-width: 600px;
-  margin-bottom: 25px;
+  max-width: 650px;
+  margin-bottom: 28px;
 }
 
 .improvements-heading .eyebrow {
@@ -610,13 +610,13 @@ a {
 }
 
 .improvements-heading h3 {
-  font: 700 24px Manrope;
+  font: 700 26px Manrope;
   margin: 0 0 10px;
   color: var(--ink);
 }
 
 .improvements-heading > p:last-child {
-  font-size: 12px;
+  font-size: 13px;
   color: var(--muted);
   margin: 0;
 }
@@ -624,33 +624,33 @@ a {
 .improvement-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 12px;
+  gap: 15px;
 }
 
 .improvement-item {
   display: grid;
-  grid-template-columns: 34px 1fr;
-  gap: 12px;
-  padding: 18px;
+  grid-template-columns: 35px 1fr;
+  gap: 13px;
+  padding: 20px;
   background: #fff;
   border: 1px solid var(--line);
-  border-radius: 10px;
+  border-radius: 11px;
 }
 
 .improvement-item > span {
-  font: 700 13px Manrope;
+  font: 700 14px Manrope;
   color: var(--blue);
 }
 
 .improvement-item h4 {
-  font: 700 13px Manrope;
-  margin: 0 0 7px;
+  font: 700 14px Manrope;
+  margin: 0 0 9px;
   color: var(--ink);
 }
 
 .improvement-item p {
-  font-size: 11px;
-  line-height: 1.8;
+  font-size: 12px;
+  line-height: 1.9;
   color: var(--muted);
   margin: 0;
 }
@@ -962,15 +962,19 @@ footer {
   }
 
   .improvements {
-    padding: 18px 12px;
+    padding: 20px 13px;
   }
 
   .improvements-heading h3 {
-    font-size: 20px;
+    font-size: 21px;
   }
 
   .improvement-grid {
     grid-template-columns: 1fr;
+  }
+
+  .improvement-item {
+    padding: 16px;
   }
 
   .prototype-copy {
